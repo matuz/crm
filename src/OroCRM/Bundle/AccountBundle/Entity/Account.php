@@ -19,9 +19,15 @@ use Oro\Bundle\UserBundle\Entity\User;
 use OroCRM\Bundle\AccountBundle\Model\ExtendAccount;
 use OroCRM\Bundle\ContactBundle\Entity\Contact;
 
+use Duon\Bundle\AccountBundle\Model\BusinessAccount;
+use Duon\Bundle\AccountBundle\Model\IndividualAccount;
+
 /**
  * @ORM\Entity()
  * @ORM\Table(name="orocrm_account", indexes={@ORM\Index(name="account_name_idx", columns={"name"})})
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="account_type_disc", type="integer")
+ * @ORM\DiscriminatorMap({0 = "Account", 1 = "BusinessAccount", 2 = "IndividualAccount"})
  * @ORM\HasLifecycleCallbacks()
  * @Oro\Loggable
  * @Config(
