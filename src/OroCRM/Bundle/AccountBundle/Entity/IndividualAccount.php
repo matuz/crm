@@ -42,5 +42,16 @@ use Oro\Bundle\EntityConfigBundle\Metadata\Annotation\Config;
  */
 class IndividualAccount extends Account
 {
-    protected $account_type_disc = 2;
+    protected $type = 'Individual';
+
+    /**
+     * Pre persist event listener
+     *
+     * @ORM\PrePersist
+     */
+    public function beforeSave()
+    {
+        $this->account_type = 2;
+        parent::beforeSave();
+    }
 }

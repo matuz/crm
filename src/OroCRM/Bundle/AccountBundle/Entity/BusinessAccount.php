@@ -43,7 +43,16 @@ use Oro\Bundle\DataAuditBundle\Metadata\Annotation as Oro;
  * )
  */
 class BusinessAccount extends Account{
+    protected $type = 'Business';
 
-    protected $account_type_disc = 1;
-
+    /**
+     * Pre persist event listener
+     *
+     * @ORM\PrePersist
+     */
+    public function beforeSave()
+    {
+        $this->account_type = 1;
+        parent::beforeSave();
+    }
 }
