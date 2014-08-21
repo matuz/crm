@@ -275,6 +275,7 @@ class Order extends ExtendOrder
     {
         parent::__construct();
 
+        $this->items         = new ArrayCollection();
         $this->relatedCalls  = new ArrayCollection();
         $this->relatedEmails = new ArrayCollection();
     }
@@ -374,7 +375,7 @@ class Order extends ExtendOrder
     /**
      * @param string $incrementId
      *
-     * @return $this
+     * @return Order
      */
     public function setIncrementId($incrementId)
     {
@@ -394,7 +395,7 @@ class Order extends ExtendOrder
     /**
      * @param string $giftMessage
      *
-     * @return $this
+     * @return Order
      */
     public function setGiftMessage($giftMessage)
     {
@@ -414,7 +415,7 @@ class Order extends ExtendOrder
     /**
      * @param boolean $isGuest
      *
-     * @return $this
+     * @return Order
      */
     public function setIsGuest($isGuest)
     {
@@ -434,7 +435,7 @@ class Order extends ExtendOrder
     /**
      * @param boolean $isVirtual
      *
-     * @return $this
+     * @return Order
      */
     public function setIsVirtual($isVirtual)
     {
@@ -454,7 +455,7 @@ class Order extends ExtendOrder
     /**
      * @param Store $store
      *
-     * @return $this
+     * @return Order
      */
     public function setStore(Store $store)
     {
@@ -474,7 +475,7 @@ class Order extends ExtendOrder
     /**
      * @param string $storeName
      *
-     * @return $this
+     * @return Order
      */
     public function setStoreName($storeName)
     {
@@ -494,7 +495,7 @@ class Order extends ExtendOrder
     /**
      * @param float $totalCanceledAmount
      *
-     * @return $this
+     * @return Order
      */
     public function setTotalCanceledAmount($totalCanceledAmount)
     {
@@ -514,7 +515,7 @@ class Order extends ExtendOrder
     /**
      * @param float $totalInvoicedAmount
      *
-     * @return $this
+     * @return Order
      */
     public function setTotalInvoicedAmount($totalInvoicedAmount)
     {
@@ -534,7 +535,7 @@ class Order extends ExtendOrder
     /**
      * @param float $totalPaidAmount
      *
-     * @return $this
+     * @return Order
      */
     public function setTotalPaidAmount($totalPaidAmount)
     {
@@ -554,7 +555,7 @@ class Order extends ExtendOrder
     /**
      * @param float $totalRefundedAmount
      *
-     * @return $this
+     * @return Order
      */
     public function setTotalRefundedAmount($totalRefundedAmount)
     {
@@ -574,7 +575,7 @@ class Order extends ExtendOrder
     /**
      * @param string $remoteIp
      *
-     * @return $this
+     * @return Order
      */
     public function setRemoteIp($remoteIp)
     {
@@ -594,7 +595,7 @@ class Order extends ExtendOrder
     /**
      * @param Cart $cart
      *
-     * @return $this
+     * @return Order
      */
     public function setCart($cart = null)
     {
@@ -688,7 +689,7 @@ class Order extends ExtendOrder
     /**
      * @param string $customerEmail
      *
-     * @return $this
+     * @return Order
      */
     public function setCustomerEmail($customerEmail)
     {

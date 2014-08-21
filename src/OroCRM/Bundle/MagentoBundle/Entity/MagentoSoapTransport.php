@@ -120,7 +120,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param string $wsdlUrl
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setWsdlUrl($wsdlUrl)
     {
@@ -140,7 +140,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param string $apiUser
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setApiUser($apiUser)
     {
@@ -160,7 +160,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param string $apiKey
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setApiKey($apiKey)
     {
@@ -180,7 +180,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param \DateTime $syncStartDate
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setSyncStartDate(\DateTime $syncStartDate = null)
     {
@@ -200,7 +200,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param \DateInterval $syncRange
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setSyncRange($syncRange)
     {
@@ -220,7 +220,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param int $websiteId
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setWebsiteId($websiteId)
     {
@@ -240,7 +240,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param array $websites
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setWebsites(array $websites)
     {
@@ -260,7 +260,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param boolean $isExtensionInstalled
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setIsExtensionInstalled($isExtensionInstalled)
     {
@@ -280,7 +280,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param boolean $isWsiMode
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setIsWsiMode($isWsiMode)
     {
@@ -305,12 +305,12 @@ class MagentoSoapTransport extends Transport
         if (null === $this->settings) {
             $this->settings = new ParameterBag(
                 [
-                    'api_user' => $this->getApiUser(),
-                    'api_key' => $this->getApiKey(),
-                    'wsdl_url' => $this->getWsdlUrl(),
-                    'sync_range' => $this->getSyncRange(),
-                    'wsi_mode' => $this->getIsWsiMode(),
-                    'website_id' => $this->getWebsiteId(),
+                    'api_user'        => $this->getApiUser(),
+                    'api_key'         => $this->getApiKey(),
+                    'wsdl_url'        => $this->getWsdlUrl(),
+                    'sync_range'      => $this->getSyncRange(),
+                    'wsi_mode'        => $this->getIsWsiMode(),
+                    'website_id'      => $this->getWebsiteId(),
                     'start_sync_date' => $this->getSyncStartDate(),
                 ]
             );
@@ -322,7 +322,7 @@ class MagentoSoapTransport extends Transport
     /**
      * @param string $adminUrl
      *
-     * @return $this
+     * @return MagentoSoapTransport
      */
     public function setAdminUrl($adminUrl)
     {
